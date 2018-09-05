@@ -3008,6 +3008,7 @@
                       Responsive is an extension for DataTables that resolves that problem by optimising the table's layout for different screen sizes through the dynamic insertion and removal of columns from the table.
                     </p>
 					
+				
                     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
@@ -3024,7 +3025,7 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td>Tiger</td>
+                          <td id="fname">Tiger</td>
                           <td>Nixon</td>
                           <td>System Architect</td>
                           <td>Edinburgh</td>
@@ -3701,6 +3702,26 @@
     <script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
 
     <!-- Custom Theme Scripts -->
+	<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+		apiKey: "AIzaSyAFV4s38zw1ymWkmxeY_SgBXMqJ2c6nleM",
+		authDomain: "lap-counter.firebaseapp.com",
+		databaseURL: "https://lap-counter.firebaseio.com",
+		projectId: "lap-counter",
+		storageBucket: "lap-counter.appspot.com",
+		messagingSenderId: "69174368354"
+	  };
+	  firebase.initializeApp(config);
+	  var ref = firebase.database().ref("text");
+	  ref.on('value', snap => fname.innerText = snap.val());
+	  /*ref.on('value',function(snapshot) {
+		//var dataSet = [snapshot.key, snapshot.val().Nombre];
+		var dataSet = ["q", "w", "e", "r", "t", "y", "u", "i", "o"];
+		datatable-responsive.rows.add([dataSet]).draw();
+	  });*/
+	</script>
     <script src="../build/js/custom.min.js"></script>
 
   </body>

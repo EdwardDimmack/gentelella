@@ -1993,7 +1993,7 @@ if (typeof NProgress != 'undefined') {
 					  pointBorderWidth: 1,
 					  data: [31, 74, 6, 39, 20, 85, 7]
 					}, {
-					  label: "My Second dataset",
+					  label: "My Second datas",
 					  backgroundColor: "rgba(3, 88, 106, 0.3)",
 					  borderColor: "rgba(3, 88, 106, 0.70)",
 					  pointBorderColor: "rgba(3, 88, 106, 0.70)",

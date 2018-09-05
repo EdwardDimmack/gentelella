@@ -266,7 +266,9 @@
           </div>
         </div>
         <!-- /top navigation -->
+		
 
+		
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
@@ -312,7 +314,9 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-
+				  
+				  
+				  
                     <table class="table">
                       <thead>
                         <tr>
@@ -502,7 +506,7 @@
                       <tbody>
                         <tr>
                           <th scope="row">1</th>
-                          <td>Mark</td>
+                          <td id="fname">Mark</td>
                           <td>Otto</td>
                           <td>@mdo</td>
                         </tr>
@@ -743,8 +747,25 @@
     <script src="../vendors/nprogress/nprogress.js"></script>
     <!-- iCheck -->
     <script src="../vendors/iCheck/icheck.min.js"></script>
-
-    <!-- Custom Theme Scripts -->
+	<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+		apiKey: "AIzaSyAFV4s38zw1ymWkmxeY_SgBXMqJ2c6nleM",
+		authDomain: "lap-counter.firebaseapp.com",
+		databaseURL: "https://lap-counter.firebaseio.com",
+		projectId: "lap-counter",
+		storageBucket: "lap-counter.appspot.com",
+		messagingSenderId: "69174368354"
+	  };
+	  firebase.initializeApp(config);
+	  var ref = firebase.database().ref("text");
+	  ref.on('value', snap => fname.innerText = snap.val());
+	  
+	</script>
+    
+	
+	<!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
   </body>
 </html>
